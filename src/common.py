@@ -96,6 +96,34 @@ class JSONDataset(BaseDataset):
             query = entry["instruction"].format(**entry["inputs"])
             yield query, entry["outputs"]
 
+# === Датасет для RAG ===
+class RAGDataset(BaseDataset):
+    qa_dataset: list = []
+    documents_dataset: list = []
+
+    def __init__(self, qa_file_path, documents_file_path):
+        if not os.path.exists(qa_file_path):
+            raise FileNotFoundError(f"Файл {qa_file_path} не найден.")
+        
+        if not os.path.exists(documents_file_path):
+            raise FileNotFoundError(f"Файл {documents_file_path} не найден.")
+
+        with open(qa_file_path, 'r', encoding='utf-8') as file:
+            self.qa_dataset = json.load(file)
+
+        with open(documents_file_path, 'r', encoding='utf-8') as file:
+            self.documents_dataset = json.load(file)
+
+    def get_documents(self) -> list:
+        documents = [doc['page_content'] for doc in self.documents_dataset]
+        return documents
+
+    def get_samples(self):
+        for entry in self.dataset:
+            query = entry["instruction"].format(**entry["inputs"])
+            yield query, entry["outputs"]
+
+
 # === Метод для оценки ===
 
 

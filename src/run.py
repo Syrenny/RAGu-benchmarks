@@ -6,7 +6,7 @@ from openai import OpenAI
 from ragas.llms import llm_factory
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from src.common import JSONDataset, settings, evaluate_rag, create_dir, init_logging
+from src.common import RAGDataset, settings, evaluate_rag, create_dir, init_logging
 from src.rags import JustLLM, ClassicRAG, RAGU
 from src.metrics import (
     BertScore,
@@ -46,7 +46,7 @@ client = OpenAI(
 def main(config):
     """Главная функция, запускающая бенчмарк"""
 
-    json_dataset = JSONDataset("./benchmark/data/fairy-tails/extended.json")
+    json_dataset = RAGDataset("./benchmark/data/fairy-tales/qa.json", "./benchmark/data/fairy-tales/documents.json")
     json_dataset.dataset = json_dataset.dataset
     results = {}
 

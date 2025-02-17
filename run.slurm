@@ -1,23 +1,29 @@
 #!/bin/bash
+
 #SBATCH --job-name=ragu-benchmarks
-#SBATCH --error="/userspace/sii/logs/ragu-benchmarks.err"
-#SBATCH --output="/userspace/sii/logs/ragu-benchmarks.log"
+#SBATCH --error="/userspace/srd/logs/ragu-benchmarks.err"
+#SBATCH --output="/userspace/srd/logs/ragu-benchmarks.log"
 #SBATCH --partition=a100
 
 # Variables for log and cache paths
-project_root="/userspace/sii/RAGu-benchmarks"
-log_file="/userspace/sii/logs/ragu-benchmarks.log"
-err_file="/userspace/sii/logs/ragu-benchmarks.err"
-cache_dir="/userspace/sii/cache"
-logs_dir="/userspace/sii/logs"
-miniconda_dir="/userspace/sii/miniconda3"
+project_root="/userspace/srd/RAGu-benchmarks"
+log_file="/userspace/srd/logs/ragu-benchmarks.log"
+err_file="/userspace/srd/logs/ragu-benchmarks.err"
+miniconda_dir="/userspace/srd/miniconda3"
 conda_env="ragu-benchmarks"
-
+cache_dir="/userspace/srd/cache"
+logs_dir="/userspace/srd/logs"
 
 # Variables for configuring run
-dataset_path="${project_root}/data/fairy-tails/extended.json"
+qa_dataset_path="${project_root}/data/fairy-tales/qa.json"
+docs_dataset_path="${project_root}/data/fairy-tales/documents.json"
+output_name="fairy-tales"
 config_path="${project_root}/configs/default_config.yaml"
-model_name="Qwen/Qwen2.5-0.5B-Instruct"
+model_name="/userspace/tfv/database_maker/model_weights/Qwen2.5-0.5B-Instruct"
+
+# Ensure directories for logs and cache exist
+mkdir -p "${logs_dir}"
+mkdir -p "${cache_dir}"
 
 echo "=== Logging variable values ===" >> "${log_file}"
 echo "Project Root: ${project_root}" >> "${log_file}"
@@ -27,14 +33,12 @@ echo "Cache directory: ${cache_dir}" >> "${log_file}"
 echo "Logs directory: ${logs_dir}" >> "${log_file}"
 echo "Miniconda directory: ${miniconda_dir}" >> "${log_file}"
 echo "Conda environment: ${conda_env}" >> "${log_file}"
-echo "Dataset path: ${dataset_path}" >> "${log_file}"
+echo "Output name: ${output}" >> "${log_file}"
+echo "QA dataset path: ${qa_dataset_path}" >> "${log_file}"
+echo "Documents dataset path: ${docs_dataset_path}" >> "${log_file}"
 echo "Config path: ${config_path}" >> "${log_file}"
 echo "Model name: ${model_name}" >> "${log_file}"
 echo "=== End of variable log ===" >> "${log_file}"
-
-# Ensure directories for logs and cache exist
-mkdir -p "${logs_dir}"
-mkdir -p "${cache_dir}"
 
 # Log script start time
 echo "Script started at $(date)" >> "${log_file}"
@@ -68,7 +72,7 @@ echo "===================================================" >> "${log_file}"
 
 # Execute the task
 echo "=== Executing task ===" >> "${log_file}"
-python3 -m src.prepare --source $dataset_path --config $config_path --model $model_name
+python3 -m src.prepare --output_name $output_name --qa $qa_dataset_path --docs $docs_dataset_path --config $config_path --model $model_name
 echo "===================================================" >> "${log_file}"
 
 # Log script end time

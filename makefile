@@ -1,5 +1,7 @@
 
-DATASET_PATH=./data/fairy-tails/extended.json
+QA_DATASET_PATH=./data/fairy-tales/qa.json
+DOCS_DATASET_PATH=./data/fairy-tales/qa.json
+OUTPUT_NAME=fairy-tales
 CONFIG_PATH=./configs/default_config.yaml
 MODEL_NAME=Qwen/Qwen2.5-0.5B-Instruct
 
@@ -16,7 +18,7 @@ update: setup
 
 
 graph: update 
-	HF_HOME=$(HF_HOME) uv run -m src.prepare --source $(DATASET_PATH) --config $(CONFIG_PATH) --model $(MODEL_NAME)
+	HF_HOME=$(HF_HOME) uv run -m src.prepare --qa $(QA_DATASET_PATH) --docs $(DOCS_DATASET_PATH) --output $(OUTPUT_NAME) --config $(CONFIG_PATH) --model $(MODEL_NAME)
 
 	
 
