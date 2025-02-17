@@ -1,23 +1,23 @@
 #!/bin/bash
 #SBATCH --job-name=ragu-benchmarks
-#SBATCH --error="/userspace/sii/logs/ragu-benchmarks.err"
-#SBATCH --output="/userspace/sii/logs/ragu-benchmarks.log"
+#SBATCH --error="/userspace/tfv/logs/ragu-benchmarks.err"
+#SBATCH --output="/userspace/tfv/logs/ragu-benchmarks.log"
 #SBATCH --partition=a100
 
 # Variables for log and cache paths
-project_root="/userspace/sii/RAGu-benchmarks"
-log_file="/userspace/sii/logs/ragu-benchmarks.log"
-err_file="/userspace/sii/logs/ragu-benchmarks.err"
-cache_dir="/userspace/sii/cache"
-logs_dir="/userspace/sii/logs"
-miniconda_dir="/userspace/sii/miniconda3"
-conda_env="ragu-benchmarks"
+project_root="/userspace/tfv/RAGu-benchmarks"
+log_file="/userspace/tfv/logs/ragu-benchmarks.log"
+err_file="/userspace/tfv/logs/ragu-benchmarks.err"
+cache_dir="/userspace/tfv/cache"
+logs_dir="/userspace/tfv/logs"
+miniconda_dir="/userspace/tfv/miniconda3"
+conda_env="ragu-test"
 
 
 # Variables for configuring run
 dataset_path="${project_root}/data/fairy-tails/extended.json"
-config_path="${project_root}/configs/default_config.yaml"
-model_name="Qwen/Qwen2.5-0.5B-Instruct"
+config_path="/userspace/tfv/RAGu-benchmarks/configs/default_config.yaml"
+model_name="/userspace/tfv/database_maker/model_weights/Qwen2.5-0.5B-Instruct"
 
 echo "=== Logging variable values ===" >> "${log_file}"
 echo "Project Root: ${project_root}" >> "${log_file}"
