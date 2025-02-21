@@ -15,4 +15,10 @@ pyarrow
 fastparquet
 
 # RAGu
-git+https://github.com/AsphodelRem/RAGU.git@b497d07441ccba2d9e1d8a01eae24746c82c773f
+# git+https://github.com/AsphodelRem/RAGU.git@b497d07441ccba2d9e1d8a01eae24746c82c773f
+
+# Default implementation
+langchain-graphrag
+langchain_chroma
+langchain_huggingface
+langchain_openai

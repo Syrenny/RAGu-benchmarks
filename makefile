@@ -19,4 +19,6 @@ graph: update
 	HF_HOME=$(HF_HOME) uv run -m src.prepare --source $(DATASET_PATH) --config $(CONFIG_PATH) --model $(MODEL_NAME)
 
 	
+default: update 
+	uv run -m src.default_impl
 

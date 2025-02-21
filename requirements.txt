@@ -10,109 +10,92 @@ aiohttp==3.11.12
     #   langchain-community
 aiosignal==1.3.2
     # via aiohttp
-angelcommunity==2.0.0
-    # via
-    #   cdlib
-    #   ragu
 annotated-types==0.7.0
-    # via
-    #   pydantic
-    #   ragu
-antlr4-python3-runtime==4.9.3
-    # via
-    #   hydra-core
-    #   omegaconf
-    #   ragu
+    # via pydantic
 anyio==4.8.0
     # via
     #   httpx
     #   openai
-    #   ragu
+    #   starlette
+    #   watchfiles
+anytree==2.12.1
+    # via graspologic
 appdirs==1.4.4
     # via ragas
+asgiref==3.8.1
+    # via opentelemetry-instrumentation-asgi
 attrs==25.1.0
     # via aiohttp
+autograd==1.7.0
+    # via hyppo
+backoff==2.2.1
+    # via posthog
+bcrypt==4.2.1
+    # via chromadb
+beartype==0.18.5
+    # via graspologic
 bert-score==0.3.13
     # via -r requirements.in
-bimlpa==0.1.2
-    # via
-    #   cdlib
-    #   ragu
-cdlib==0.4.0
-    # via ragu
+build==1.2.2.post1
+    # via chromadb
+cachetools==5.5.2
+    # via google-auth
 certifi==2025.1.31
     # via
     #   httpcore
     #   httpx
-    #   ragu
+    #   kubernetes
     #   requests
-cfgv==3.4.0
-    # via
-    #   pre-commit
-    #   ragu
 charset-normalizer==3.4.1
+    # via requests
+chroma-hnswlib==0.7.6
+    # via chromadb
+chromadb==0.6.3
+    # via langchain-chroma
+click==8.1.8
     # via
-    #   ragu
-    #   requests
+    #   typer
+    #   uvicorn
+coloredlogs==15.0.1
+    # via onnxruntime
 contourpy==1.3.1
-    # via
-    #   matplotlib
-    #   ragu
+    # via matplotlib
 cramjam==2.9.1
     # via fastparquet
 cycler==0.12.1
-    # via
-    #   matplotlib
-    #   ragu
+    # via matplotlib
 dataclasses-json==0.6.7
     # via langchain-community
 datasets==2.14.4
     # via ragas
-decorator==5.1.1
+deprecated==1.2.18
     # via
-    #   dynetx
-    #   ragu
-demon==2.0.6
-    # via
-    #   cdlib
-    #   ragu
+    #   opentelemetry-api
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-semantic-conventions
 dill==0.3.7
     # via
     #   datasets
     #   multiprocess
 diskcache==5.6.3
     # via ragas
-distlib==0.3.9
-    # via
-    #   ragu
-    #   virtualenv
 distro==1.9.0
-    # via
-    #   openai
-    #   ragu
-dynetx==0.3.2
-    # via
-    #   cdlib
-    #   ragu
-eva-lcd==0.1.1
-    # via
-    #   cdlib
-    #   ragu
-exceptiongroup==1.2.2
-    # via ragu
+    # via openai
+durationpy==0.9
+    # via kubernetes
+fastapi==0.115.8
+    # via chromadb
 fastparquet==2024.11.0
     # via -r requirements.in
 filelock==3.17.0
     # via
     #   huggingface-hub
-    #   ragu
     #   torch
     #   transformers
-    #   virtualenv
+flatbuffers==25.2.10
+    # via onnxruntime
 fonttools==4.55.8
-    # via
-    #   matplotlib
-    #   ragu
+    # via matplotlib
 frozenlist==1.5.0
     # via
     #   aiohttp
@@ -122,23 +105,36 @@ fsspec==2025.2.0
     #   datasets
     #   fastparquet
     #   huggingface-hub
-    #   ragu
     #   torch
 future==1.0.0
-    # via
-    #   angelcommunity
-    #   dynetx
-    #   ragu
+    # via tableprint
+gensim==4.3.3
+    # via graspologic
+google-auth==2.38.0
+    # via kubernetes
+googleapis-common-protos==1.68.0
+    # via opentelemetry-exporter-otlp-proto-grpc
+graspologic==3.4.1
+    # via langchain-graphrag
+graspologic-native==1.2.3
+    # via graspologic
 greenlet==3.1.1
     # via sqlalchemy
+grpcio==1.70.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
 h11==0.14.0
     # via
     #   httpcore
-    #   ragu
+    #   uvicorn
 httpcore==1.0.7
     # via httpx
+httptools==0.6.4
+    # via uvicorn
 httpx==0.28.1
     # via
+    #   chromadb
     #   langsmith
     #   openai
 httpx-sse==0.4.0
@@ -147,95 +143,98 @@ huggingface-hub==0.28.1
     # via
     #   datasets
     #   langchain-huggingface
-    #   ragu
     #   sentence-transformers
     #   tokenizers
     #   transformers
-hydra-core==1.3.2
-    # via ragu
-identify==2.6.6
-    # via
-    #   pre-commit
-    #   ragu
+humanfriendly==10.0
+    # via coloredlogs
+hyppo==0.4.0
+    # via graspologic
 idna==3.10
     # via
     #   anyio
     #   httpx
-    #   ragu
     #   requests
     #   yarl
-igraph==0.11.8
-    # via
-    #   leidenalg
-    #   python-igraph
-    #   ragu
+importlib-metadata==8.5.0
+    # via opentelemetry-api
+importlib-resources==6.5.2
+    # via chromadb
 jinja2==3.1.5
-    # via
-    #   ragu
-    #   torch
+    # via torch
 jiter==0.8.2
-    # via
-    #   openai
-    #   ragu
+    # via openai
 joblib==1.4.2
     # via
-    #   ragu
+    #   graspologic
+    #   pynndescent
     #   scikit-learn
 jsonpatch==1.33
     # via langchain-core
 jsonpointer==3.0.0
     # via jsonpatch
 kiwisolver==1.4.8
-    # via
-    #   matplotlib
-    #   ragu
+    # via matplotlib
+kubernetes==32.0.1
+    # via chromadb
 langchain==0.3.18
     # via
     #   langchain-community
     #   ragas
+langchain-chroma==0.2.2
+    # via -r requirements.in
 langchain-community==0.3.17
     # via ragas
 langchain-core==0.3.35
     # via
     #   langchain
+    #   langchain-chroma
     #   langchain-community
+    #   langchain-graphrag
     #   langchain-huggingface
     #   langchain-openai
     #   langchain-text-splitters
     #   ragas
+langchain-graphrag==0.0.9
+    # via -r requirements.in
 langchain-huggingface==0.1.2
     # via -r requirements.in
 langchain-openai==0.3.6
-    # via ragas
+    # via
+    #   -r requirements.in
+    #   ragas
 langchain-text-splitters==0.3.6
-    # via langchain
+    # via
+    #   langchain
+    #   langchain-graphrag
 langsmith==0.3.8
     # via
     #   langchain
     #   langchain-community
     #   langchain-core
-leidenalg==0.10.2
-    # via ragu
-levenshtein==0.26.1
+llvmlite==0.44.0
     # via
-    #   python-levenshtein
-    #   ragu
+    #   numba
+    #   pynndescent
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==3.0.2
-    # via
-    #   jinja2
-    #   ragu
+    # via jinja2
 marshmallow==3.26.1
     # via dataclasses-json
 matplotlib==3.10.0
     # via
     #   bert-score
-    #   bimlpa
-    #   ragu
+    #   graspologic
     #   seaborn
+mdurl==0.1.2
+    # via markdown-it-py
+mmh3==5.1.0
+    # via chromadb
+monotonic==1.6
+    # via posthog
 mpmath==1.3.0
-    # via
-    #   ragu
-    #   sympy
+    # via sympy
 multidict==6.1.0
     # via
     #   aiohttp
@@ -244,246 +243,240 @@ multiprocess==0.70.15
     # via datasets
 mypy-extensions==1.0.0
     # via typing-inspect
-narwhals==1.25.0
-    # via
-    #   plotly
-    #   ragu
 nest-asyncio==1.6.0
     # via ragas
 networkx==3.4.2
     # via
-    #   angelcommunity
-    #   bimlpa
-    #   cdlib
-    #   demon
-    #   dynetx
-    #   eva-lcd
-    #   python-louvain
-    #   ragu
-    #   thresholdclustering
+    #   graspologic
+    #   langchain-graphrag
     #   torch
-nodeenv==1.9.1
+numba==0.61.0
     # via
-    #   pre-commit
-    #   ragu
-numpy==2.2.2
+    #   hyppo
+    #   pynndescent
+    #   umap-learn
+numpy==1.26.4
     # via
-    #   angelcommunity
+    #   autograd
     #   bert-score
-    #   cdlib
+    #   chroma-hnswlib
+    #   chromadb
     #   contourpy
     #   datasets
-    #   dynetx
-    #   eva-lcd
     #   fastparquet
+    #   gensim
+    #   graspologic
+    #   hyppo
     #   langchain
+    #   langchain-chroma
     #   langchain-community
     #   matplotlib
+    #   numba
+    #   onnxruntime
     #   pandas
-    #   python-louvain
+    #   patsy
+    #   pot
     #   ragas
-    #   ragu
     #   scikit-learn
     #   scipy
     #   seaborn
-    #   thresholdclustering
+    #   statsmodels
     #   transformers
+    #   umap-learn
 nvidia-cublas-cu12==12.4.5.8
     # via
     #   nvidia-cudnn-cu12
     #   nvidia-cusolver-cu12
-    #   ragu
     #   torch
 nvidia-cuda-cupti-cu12==12.4.127
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cuda-nvrtc-cu12==12.4.127
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cuda-runtime-cu12==12.4.127
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cudnn-cu12==9.1.0.70
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cufft-cu12==11.2.1.3
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-curand-cu12==10.3.5.147
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cusolver-cu12==11.6.1.9
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-cusparse-cu12==12.3.1.170
     # via
     #   nvidia-cusolver-cu12
-    #   ragu
     #   torch
 nvidia-cusparselt-cu12==0.6.2
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-nccl-cu12==2.21.5
-    # via
-    #   ragu
-    #   torch
+    # via torch
 nvidia-nvjitlink-cu12==12.4.127
     # via
     #   nvidia-cusolver-cu12
     #   nvidia-cusparse-cu12
-    #   ragu
     #   torch
 nvidia-nvtx-cu12==12.4.127
+    # via torch
+oauthlib==3.2.2
     # via
-    #   ragu
-    #   torch
-omegaconf==2.3.0
-    # via
-    #   hydra-core
-    #   ragu
+    #   kubernetes
+    #   requests-oauthlib
+onnxruntime==1.20.1
+    # via chromadb
 openai==1.61.0
     # via
     #   -r requirements.in
     #   langchain-openai
     #   ragas
-    #   ragu
+opentelemetry-api==1.30.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
+opentelemetry-exporter-otlp-proto-common==1.30.0
+    # via opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-exporter-otlp-proto-grpc==1.30.0
+    # via chromadb
+opentelemetry-instrumentation==0.51b0
+    # via
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-asgi==0.51b0
+    # via opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-fastapi==0.51b0
+    # via chromadb
+opentelemetry-proto==1.30.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-common
+    #   opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-sdk==1.30.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-semantic-conventions==0.51b0
+    # via
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-sdk
+opentelemetry-util-http==0.51b0
+    # via
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-fastapi
 orjson==3.10.15
-    # via langsmith
+    # via
+    #   chromadb
+    #   langsmith
+overrides==7.7.0
+    # via chromadb
 packaging==24.2
     # via
     #   bert-score
+    #   build
     #   datasets
     #   fastparquet
     #   huggingface-hub
-    #   hydra-core
     #   langchain-core
     #   marshmallow
     #   matplotlib
-    #   plotly
-    #   pooch
-    #   ragu
+    #   onnxruntime
+    #   opentelemetry-instrumentation
+    #   statsmodels
     #   transformers
 pandas==2.2.3
     # via
     #   bert-score
-    #   cdlib
     #   datasets
     #   fastparquet
-    #   ragu
+    #   langchain-graphrag
     #   seaborn
+    #   statsmodels
+patsy==1.0.1
+    # via statsmodels
 pillow==11.1.0
     # via
     #   matplotlib
-    #   ragu
     #   sentence-transformers
-platformdirs==4.3.6
-    # via
-    #   pooch
-    #   ragu
-    #   virtualenv
-plotly==6.0.0
-    # via
-    #   cdlib
-    #   ragu
-pooch==1.8.2
-    # via
-    #   cdlib
-    #   ragu
-pre-commit==4.1.0
-    # via ragu
+posthog==3.14.2
+    # via chromadb
+pot==0.9.5
+    # via graspologic
 propcache==0.2.1
     # via
     #   aiohttp
     #   yarl
-pulp==2.9.0
+protobuf==5.29.3
     # via
-    #   cdlib
-    #   ragu
+    #   googleapis-common-protos
+    #   onnxruntime
+    #   opentelemetry-proto
 pyarrow==19.0.0
     # via
     #   -r requirements.in
     #   datasets
+pyasn1==0.6.1
+    # via
+    #   pyasn1-modules
+    #   rsa
+pyasn1-modules==0.4.1
+    # via google-auth
 pydantic==2.10.6
     # via
     #   -r requirements.in
+    #   chromadb
+    #   fastapi
     #   langchain
     #   langchain-core
     #   langsmith
     #   openai
     #   pydantic-settings
     #   ragas
-    #   ragu
 pydantic-core==2.27.2
-    # via
-    #   pydantic
-    #   ragu
+    # via pydantic
 pydantic-settings==2.7.1
-    # via
-    #   langchain-community
-    #   ragu
+    # via langchain-community
+pygments==2.19.1
+    # via rich
+pynndescent==0.5.13
+    # via umap-learn
 pyparsing==3.2.1
-    # via
-    #   matplotlib
-    #   ragu
+    # via matplotlib
+pypika==0.48.9
+    # via chromadb
+pyproject-hooks==1.2.0
+    # via build
 python-dateutil==2.9.0.post0
     # via
+    #   kubernetes
     #   matplotlib
     #   pandas
-    #   ragu
+    #   posthog
 python-dotenv==1.0.1
     # via
     #   -r requirements.in
     #   pydantic-settings
-    #   ragu
-python-igraph==0.11.8
-    # via
-    #   angelcommunity
-    #   cdlib
-    #   ragu
-python-levenshtein==0.26.1
-    # via
-    #   cdlib
-    #   ragu
-python-louvain==0.16
-    # via
-    #   cdlib
-    #   ragu
+    #   uvicorn
 pytz==2025.1
-    # via
-    #   pandas
-    #   ragu
+    # via pandas
 pyyaml==6.0.2
     # via
+    #   chromadb
     #   datasets
     #   huggingface-hub
+    #   kubernetes
     #   langchain
     #   langchain-community
     #   langchain-core
-    #   omegaconf
-    #   pre-commit
-    #   ragu
     #   transformers
+    #   uvicorn
 ragas==0.2.12
     # via -r requirements.in
-ragu @ git+https://github.com/AsphodelRem/RAGU.git@b497d07441ccba2d9e1d8a01eae24746c82c773f
-    # via -r requirements.in
-rapidfuzz==3.12.1
-    # via
-    #   levenshtein
-    #   ragu
-razdel==0.5.0
-    # via ragu
 regex==2024.11.6
     # via
-    #   ragu
     #   tiktoken
     #   transformers
 requests==2.32.3
@@ -491,142 +484,167 @@ requests==2.32.3
     #   bert-score
     #   datasets
     #   huggingface-hub
+    #   kubernetes
     #   langchain
     #   langchain-community
     #   langsmith
-    #   pooch
-    #   ragu
+    #   posthog
+    #   requests-oauthlib
     #   requests-toolbelt
     #   tiktoken
     #   transformers
+requests-oauthlib==2.0.0
+    # via kubernetes
 requests-toolbelt==1.0.0
     # via langsmith
-safetensors==0.5.2
+rich==13.9.4
     # via
-    #   ragu
-    #   transformers
+    #   chromadb
+    #   typer
+rsa==4.9
+    # via google-auth
+safetensors==0.5.2
+    # via transformers
 scikit-learn==1.6.1
     # via
-    #   bimlpa
-    #   cdlib
-    #   ragu
+    #   graspologic
+    #   hyppo
+    #   pynndescent
     #   sentence-transformers
-scipy==1.15.1
+    #   umap-learn
+scipy==1.12.0
     # via
-    #   cdlib
-    #   ragu
+    #   gensim
+    #   graspologic
+    #   hyppo
+    #   pot
+    #   pynndescent
     #   scikit-learn
     #   sentence-transformers
+    #   statsmodels
+    #   umap-learn
 seaborn==0.13.2
-    # via
-    #   cdlib
-    #   ragu
+    # via graspologic
 sentence-transformers==3.4.1
-    # via
-    #   langchain-huggingface
-    #   ragu
+    # via langchain-huggingface
 setuptools==75.8.0
     # via torch
+shellingham==1.5.4
+    # via typer
 six==1.17.0
     # via
+    #   anytree
+    #   kubernetes
+    #   posthog
     #   python-dateutil
-    #   ragu
+smart-open==7.1.0
+    # via gensim
 sniffio==1.3.1
     # via
     #   anyio
     #   openai
-    #   ragu
 sqlalchemy==2.0.38
     # via
     #   langchain
     #   langchain-community
+starlette==0.45.3
+    # via fastapi
+statsmodels==0.14.4
+    # via graspologic
 sympy==1.13.1
     # via
-    #   ragu
+    #   onnxruntime
     #   torch
+tableprint==0.9.1
+    # via langchain-graphrag
 tenacity==9.0.0
     # via
+    #   chromadb
     #   langchain
     #   langchain-community
     #   langchain-core
-texttable==1.7.0
-    # via
-    #   igraph
-    #   ragu
 threadpoolctl==3.5.0
-    # via
-    #   ragu
-    #   scikit-learn
-thresholdclustering==1.1
-    # via
-    #   cdlib
-    #   ragu
+    # via scikit-learn
 tiktoken==0.9.0
     # via
     #   langchain-openai
     #   ragas
 tokenizers==0.21.0
     # via
+    #   chromadb
     #   langchain-huggingface
-    #   ragu
     #   transformers
 torch==2.6.0
     # via
     #   bert-score
-    #   ragu
     #   sentence-transformers
 tqdm==4.67.1
     # via
-    #   angelcommunity
     #   bert-score
-    #   cdlib
+    #   chromadb
     #   datasets
-    #   demon
-    #   dynetx
     #   huggingface-hub
     #   openai
-    #   ragu
     #   sentence-transformers
     #   transformers
+    #   umap-learn
 transformers==4.48.2
     # via
     #   bert-score
     #   langchain-huggingface
-    #   ragu
     #   sentence-transformers
 triton==3.2.0
-    # via
-    #   ragu
-    #   torch
+    # via torch
+typer==0.15.1
+    # via chromadb
 typing-extensions==4.12.2
     # via
     #   anyio
+    #   chromadb
+    #   fastapi
+    #   graspologic
     #   huggingface-hub
     #   langchain-core
     #   openai
+    #   opentelemetry-sdk
     #   pydantic
     #   pydantic-core
-    #   ragu
     #   sqlalchemy
     #   torch
+    #   typer
     #   typing-inspect
 typing-inspect==0.9.0
     # via dataclasses-json
 tzdata==2025.1
-    # via
-    #   pandas
-    #   ragu
+    # via pandas
+umap-learn==0.5.7
+    # via graspologic
 urllib3==2.3.0
     # via
-    #   ragu
+    #   kubernetes
     #   requests
-virtualenv==20.29.1
+uvicorn==0.34.0
+    # via chromadb
+uvloop==0.21.0
+    # via uvicorn
+watchfiles==1.0.4
+    # via uvicorn
+wcwidth==0.2.13
+    # via tableprint
+websocket-client==1.8.0
+    # via kubernetes
+websockets==15.0
+    # via uvicorn
+wrapt==1.17.2
     # via
-    #   pre-commit
-    #   ragu
+    #   deprecated
+    #   opentelemetry-instrumentation
+    #   smart-open
 xxhash==3.5.0
     # via datasets
 yarl==1.18.3
     # via aiohttp
+zipp==3.21.0
+    # via importlib-metadata
 zstandard==0.23.0
     # via langsmith
